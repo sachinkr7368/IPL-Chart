@@ -20,10 +20,10 @@ const Nav = styled.div`
   }
   p{
     display: flex;
-    align-items: center;
+    justify-content: center;
     font-size: 30px;
     color: white;
-    margin: auto auto auto 2rem;
+    margin: auto auto auto 0%;
   }
   h3{
     font-size: 20px;

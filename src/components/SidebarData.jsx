@@ -3,7 +3,6 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
-
 export const SidebarData = [
   {
     title: 'DashBoard',
@@ -28,12 +27,12 @@ export const SidebarData = [
   {
     title: 'Season',
     path: '/season',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <AiIcons.AiFillCalendar />,
   },
   {
     title: 'City',
     path: '/city',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <FaIcons.FaCity />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -41,19 +40,19 @@ export const SidebarData = [
       {
         title: 'Hyderabad',
         path: '/city/hyderabad',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <FaIcons.FaCity />,
         cName: 'sub-nav'
       },
       {
         title: 'Chennai',
         path: '/city/chennai',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <FaIcons.FaCity />,
         cName: 'sub-nav'
       },
       {
         title:'Mumbai',
         path: '/city/mumbai',
-        icon: <IoIcons.IoIosPaper />
+        icon: <FaIcons.FaCity />
       }
     ]
   },
