@@ -228,6 +228,7 @@ export default function SeasonDisplay() {
           "darkblue",
           "white",
           "green",
+          "violet",
         ],
         borderColor: "black",
         borderWidth: 2,
