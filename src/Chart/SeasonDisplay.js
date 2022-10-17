@@ -408,7 +408,7 @@ export default function SeasonDisplay() {
         <PolarChart chartData={userDatasix} />
       </div>
 
-      <div style={{ width: 650 }}>
+      <div style={{ width: 800 }}>
       <p>Matches Hosted By Country</p>
         <DoughnutChart chartData={userDataseven} />
       </div>
