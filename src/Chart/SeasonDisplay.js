@@ -213,7 +213,7 @@ export default function SeasonDisplay() {
       "Rajkot",
       "Bangalore",
       "Indore",
-  ],
+    ],
     datasets: [
       {
         label: "Match played City Wise",
@@ -236,30 +236,90 @@ export default function SeasonDisplay() {
   });
 
   // 5th Chart Data
-
+  var ind=0,nz=0,aus=0,pak=0,sa=0,sl=0,wi=0,zim=0,eng=0,bang=0,neth=0;
+  if(PlayerData.length!== 0){
+    PlayerData.forEach((player) => {
+      if( player.Country === 'India'){
+        ind++;
+      }else if( player.Country === 'New Zealand'){
+        nz++;
+      } else if( player.Country === 'Australia'){
+        aus++;
+      } else if( player.Country === 'Pakistan'){
+        pak++;
+      } else if( player.Country === 'South Africa'){
+        sa++;
+      } else if( player.Country === 'Sri Lanka'){
+        sl++;
+      } else if( player.Country === 'West Indies'){
+        wi++;
+      } else if( player.Country === 'Zimbabwea'){
+        zim++;
+      } else if( player.Country === 'England'){
+        eng++;
+      } else if( player.Country === 'Bangladesh'){
+        bang++;
+      } else if( player.Country === 'Netherlands'){
+        neth++;
+      }
+    })
+  }
   const [userDatafive, setUserDatafive] = useState({
-    labels: SeasonData.map((data) => data.Season_Year),
+    labels: [
+      "India",
+      "New Zealand",
+      "Australia",
+      "Pakistan",
+      "South Africa",
+      "Sri Lanka",
+      "West Indies",
+      "Zimbabwea",
+      "England",
+      "Bangladesh",
+      "Netherlands",
+    ],
     datasets: [
       {
-        label: "Purple Cap Winners",
-        data: SeasonData.map((data) => data.Purple_Cap_Id),
+        label: "Players from Countries",
+        data: [ind,nz,aus,pak,sa,sl,wi,zim,eng,bang,neth,],
         responsive: true,
-        backgroundColor: ["Purple"],
+        backgroundColor: [
+          "red",
+          "yellow",
+          "violet",
+          "pink",
+          "blue",
+          "skycolor",
+          "darkblue",
+          "white",
+          "green",
+          "cyan",
+          "grey",
+        ],
         borderColor: "black",
         borderWidth: 2,
       },
     ],
   });
   // 6th Chart Display
+  var l=0, r=0;
+  if( PlayerData.length!== 0){
+    PlayerData.forEach((player) => {
+      if(player.Batting_Hand === 'Right_Hand'){
+        r++;
+      }else if( player.Batting_Hand === 'Left_Hand'){
+        l++;
+      }
+    })
+  }
   const [userDatasix, setUserDatasix] = useState({
-    labels: TeamData.map((data) => data.Host_Country),
+    labels: ['Right Hand', 'Left Hand'],
     datasets: [
       {
-        label: "Average Runs Every Over",
-        data: TeamData.map((data) => data.Team_Name_Id),
+        label: "Batsman Detail",
+        data: [r,l],
 
-        backgroundColor: ["Purple"],
-        borderColor: "black",
+        backgroundColor: ["green","blue"],
         borderWidth: 2,
       },
     ],
@@ -311,12 +371,13 @@ export default function SeasonDisplay() {
         <p>Match Played in these Cities</p>
         <PieChart chartData={userDatafour} />
       </div>
-
       <div style={{ width: 650 }}>
-        <PieChart chartData={userDatafive} />
+        <p>No of Players from Countries</p>
+        <BarChart chartData={userDatafive} />
       </div>
       <div style={{ width: 650 }}>
-        <DoughnutChart chartData={userDatasix} />
+      <p>Left/Right Handed Batsman</p>
+        <PolarChart chartData={userDatasix} />
       </div>
       <div style={{ width: 650 }}>
         <LineChart chartData={userDataseven} />
