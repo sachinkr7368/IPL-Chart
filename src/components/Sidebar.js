@@ -13,17 +13,14 @@ const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  input{
-    margin: auto auto auto 2rem;
-    height: 2rem;
-    border-radius: 10px;
-  }
+  
   p{
     display: flex;
     justify-content: center;
     font-size: 30px;
     color: white;
-    margin: auto auto auto 0%;
+    margin: auto ;
+    padding: auto;
   }
   h3{
     font-size: 20px;
@@ -83,8 +80,8 @@ const Sidebar = () => {
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-          <input width= "30%" placeholder="Team..."/>
-          <p>IPL Chart</p>
+          
+          <p>Indian Premiere League</p>
           <h3>Log In </h3>
           <h4>Sign Up</h4>
         </Nav>
