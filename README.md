@@ -1,72 +1,38 @@
-# Getting Started with Create React App
+# FrontEnd Challenge – IPL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Challenge to build a data visualisation on web app with chart from IPL (Indian Premier League) data provided in CSV files. Goal was to shows  stats and interesting information about IPL to someone who is New to IPL;.
 
-## Available Scripts
+  - Good UI/UX 
+  - Responsive Design and Everything
+  - Supports Mobile Browser
 
-In the project directory, you can run:
+## Built With
+  - [React](https://reactjs.org/) - The framework Used to Build
+  - [Chart.js](https://www.chartjs.org/) - used to create charts
+  - [jQuery](http://jquery.com) - javaScript library
+  - [Styled-Component](https://styled-components.com/) - For Styling
 
-### `npm start`
+## Dataset
+  - [Click Here](https://www.kaggle.com/harsha547/indian-premier-league-csv-dataset)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Link to Hosted Website
+  - [Click to View](https://sachin-ipl-chart.vercel.app)  
+  *(Hosted on Vercel)*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## For Bonus Points
+  - I used React instead of Vue solely because I'm more familiar with React.
+  - Used a fast library. Used styled-Components for best performance and used best practices for writing Javascript code. 
+  - The website is fully mobile responsive, I've made sure that every little detail looks good on mobile! I focused on making an easy-to-use User Interface (UI) for great constrast and visual appeal.Experience (UX). Moreover, I've written all styling code by myself;
+  - It is also usable offline.
+  
+## Thought Process
+  - Idea was to use the little dark color scheme  for dashboard and as grey for page.
+  - I searched through all the given datasets to look for attributes that would intrigue a person who knows cricket but has never watched IPL. 
+  - I wanted the Navigation bar to initially be in 'full' state while browsing on desktop and in 'minimal' state while on mobile to give mobile users more space yet have menu items easily accessible in one click.
+  -I went with Chart.js as it provided many predefined graphs.
+  - When looking for a CSV file parsing solution i just thought of converting it to json and we can do the same with papaparse too.
+  - Making a mobile responsive website is a must in 2022. With mobile in-mind, I carefully planned my layout design. I used grid layout and flex box for most of my layout design process.
+  - The top bar seemed empty, so I added a login and Signup so it looks better and later i can implement its functionality also.
+  - Added Icon according to the category and subnavs to for better experience in phone and pc if we later want to go with category.
+  
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# IPL-Chart
-# IPL-Chart

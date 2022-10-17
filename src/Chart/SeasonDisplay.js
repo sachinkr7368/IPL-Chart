@@ -13,7 +13,7 @@ import PieChart from "./PieChart.js";
 import PolarChart from "./PolarChart";
 import DoughnutChart from "./DoughnutChart.js";
 export default function SeasonDisplay() {
-  // 1st chart data
+  // Batting and Fielding Decision
   let batCount = 0;
   if (MatchesData.length !== 0) {
     MatchData.forEach((data) => {
@@ -36,7 +36,7 @@ export default function SeasonDisplay() {
     ],
   });
 
-  //2nd chart Data
+  //Toss won by team
   var srh = 0,
     kkr = 0,
     rcb = 0,
@@ -85,7 +85,7 @@ export default function SeasonDisplay() {
     labels: TeamData.map((data) => data.Team_Short_Code),
     datasets: [
       {
-        label: "Toss Won By Teams",
+        label: "Toss Won By Team",
         data: [srh, kkr, rcb, csk, kxip, rr, dd, mi, dc, ktk, pw, gl, rps],
         responsive: true,
         backgroundColor: [
@@ -109,7 +109,7 @@ export default function SeasonDisplay() {
     ],
   });
 
-  //3rd Chart Data
+  //Matches won by team
   if (MatchesData.length !== 0) {
     MatchesData.forEach((data) => {
       if (data.winner === "Sunrisers Hyderabad") {
@@ -169,7 +169,7 @@ export default function SeasonDisplay() {
     ],
   });
 
-  // 4th Chart Data
+  // Match Played city Wise
   var kol = 0,
     del = 0,
     pune = 0,
@@ -235,34 +235,44 @@ export default function SeasonDisplay() {
     ],
   });
 
-  // 5th Chart Data
-  var ind=0,nz=0,aus=0,pak=0,sa=0,sl=0,wi=0,zim=0,eng=0,bang=0,neth=0;
-  if(PlayerData.length!== 0){
+  // Player From Countries
+  var ind = 0,
+    nz = 0,
+    aus = 0,
+    pak = 0,
+    sa = 0,
+    sl = 0,
+    wi = 0,
+    zim = 0,
+    eng = 0,
+    bang = 0,
+    neth = 0;
+  if (PlayerData.length !== 0) {
     PlayerData.forEach((player) => {
-      if( player.Country === 'India'){
+      if (player.Country === "India") {
         ind++;
-      }else if( player.Country === 'New Zealand'){
+      } else if (player.Country === "New Zealand") {
         nz++;
-      } else if( player.Country === 'Australia'){
+      } else if (player.Country === "Australia") {
         aus++;
-      } else if( player.Country === 'Pakistan'){
+      } else if (player.Country === "Pakistan") {
         pak++;
-      } else if( player.Country === 'South Africa'){
+      } else if (player.Country === "South Africa") {
         sa++;
-      } else if( player.Country === 'Sri Lanka'){
+      } else if (player.Country === "Sri Lanka") {
         sl++;
-      } else if( player.Country === 'West Indies'){
+      } else if (player.Country === "West Indies") {
         wi++;
-      } else if( player.Country === 'Zimbabwea'){
+      } else if (player.Country === "Zimbabwea") {
         zim++;
-      } else if( player.Country === 'England'){
+      } else if (player.Country === "England") {
         eng++;
-      } else if( player.Country === 'Bangladesh'){
+      } else if (player.Country === "Bangladesh") {
         bang++;
-      } else if( player.Country === 'Netherlands'){
+      } else if (player.Country === "Netherlands") {
         neth++;
       }
-    })
+    });
   }
   const [userDatafive, setUserDatafive] = useState({
     labels: [
@@ -281,7 +291,7 @@ export default function SeasonDisplay() {
     datasets: [
       {
         label: "Players from Countries",
-        data: [ind,nz,aus,pak,sa,sl,wi,zim,eng,bang,neth,],
+        data: [ind, nz, aus, pak, sa, sl, wi, zim, eng, bang, neth],
         responsive: true,
         backgroundColor: [
           "red",
@@ -301,41 +311,52 @@ export default function SeasonDisplay() {
       },
     ],
   });
-  // 6th Chart Display
-  var l=0, r=0;
-  if( PlayerData.length!== 0){
+  // Batsman Detail
+  var l = 0,
+    r = 0;
+  if (PlayerData.length !== 0) {
     PlayerData.forEach((player) => {
-      if(player.Batting_Hand === 'Right_Hand'){
+      if (player.Batting_Hand === "Right_Hand") {
         r++;
-      }else if( player.Batting_Hand === 'Left_Hand'){
+      } else if (player.Batting_Hand === "Left_Hand") {
         l++;
       }
-    })
+    });
   }
   const [userDatasix, setUserDatasix] = useState({
-    labels: ['Right Hand', 'Left Hand'],
+    labels: ["Right Hand", "Left Hand"],
     datasets: [
       {
         label: "Batsman Detail",
-        data: [r,l],
+        data: [r, l],
 
-        backgroundColor: ["green","blue"],
+        backgroundColor: ["green", "blue"],
         borderWidth: 2,
       },
     ],
   });
-  //7th Average runs every over
-
+  //Matches Hosted By Country
+  var IN = 0,SA = 0,UAE = 0;
+  if (MatchData.length !== 0) {
+    MatchData.forEach((match) => {
+      if (match.Host_Country === "India") {
+        IN++;
+      } else if (match.Host_Country === "South Africa") {
+        SA++;
+      } else if ( match.Host_Country === "U.A.E" ){
+        UAE++;
+      }
+    });
+  }
   const [userDataseven, setUserDataseven] = useState({
-    labels: SeasonData.map((data) => data.Season_Year),
+    labels: ['India','South Africa','U.A.E'],
     datasets: [
       {
         label: "Average Runs Every Over",
-        data: SeasonData.map((data) => data.Purple_Cap_Id),
+        data: [IN, SA, UAE],
         responsive: true,
-        backgroundColor: ["Purple"],
-        borderColor: "black",
-        borderWidth: 2,
+        backgroundColor: ['orange','green','red'],
+        borderWidth: 1,
       },
     ],
   });
@@ -355,33 +376,42 @@ export default function SeasonDisplay() {
   });
   return (
     <Container>
+
       <div style={{ width: 650 }}>
         <p>Batting/Fielding Decision </p>
         <BarChart chartData={userData} />
       </div>
+
       <div style={{ width: 650 }}>
         <p>Toss Won by Team</p>
         <BarChart chartData={userDatatwo} />
       </div>
+
       <div style={{ width: 650 }}>
         <p>Match Won by Team</p>
         <DoughnutChart chartData={userDatathree} />
       </div>
+
       <div style={{ width: 650 }}>
         <p>Match Played in these Cities</p>
         <PieChart chartData={userDatafour} />
       </div>
+
       <div style={{ width: 650 }}>
         <p>No of Players from Countries</p>
         <BarChart chartData={userDatafive} />
       </div>
+
       <div style={{ width: 650 }}>
-      <p>Left/Right Handed Batsman</p>
+        <p>Left/Right Handed Batsman</p>
         <PolarChart chartData={userDatasix} />
       </div>
+
       <div style={{ width: 650 }}>
-        <LineChart chartData={userDataseven} />
+      <p>Matches Hosted By Country</p>
+        <DoughnutChart chartData={userDataseven} />
       </div>
+
       <div style={{ width: 650 }}>
         <LineChart chartData={userDataeight} />
       </div>
