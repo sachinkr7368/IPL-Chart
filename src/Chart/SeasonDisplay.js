@@ -413,9 +413,7 @@ export default function SeasonDisplay() {
         <DoughnutChart chartData={userDataseven} />
       </div>
 
-      <div style={{ width: 650 }}>
-        <LineChart chartData={userDataeight} />
-      </div>
+      
     </Container>
   );
 }
